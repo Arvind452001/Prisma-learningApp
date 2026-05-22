@@ -9,7 +9,7 @@ import {
 
 const router = Router();
 
-router.get("/get/", getStudents);
+router.get("/get", getStudents);
 router.get("/getById/:id", getStudentById);
 router.post("/create", createStudent);
 router.put("/update/:id", updateStudent);

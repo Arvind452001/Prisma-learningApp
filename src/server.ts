@@ -3,6 +3,7 @@ import studentRoutes from "./routes/student.routes";
 import bookRoutes from "./routes/book.routes";
 import issueRoutes from "./routes/issue.routes";
 import prisma from "./prisma/studentPrisma";
+import { errorMiddleware } from "./middlewares/errorMiddleware";
 
 const app = express();
 
@@ -11,6 +12,9 @@ app.use(express.json());
 app.use("/api/students", studentRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/issues", issueRoutes);
+
+
+app.use(errorMiddleware);
 
 const PORT = process.env.PORT || "5000";
 
